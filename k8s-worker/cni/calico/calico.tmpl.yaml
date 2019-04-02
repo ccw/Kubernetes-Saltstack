@@ -13,17 +13,17 @@
 {% endif %}
 {%- set IpIp = pillar['kubernetes']['worker']['networking']['calico']['ipv4']['ip-in-ip'] -%}
 {% if IpIp == true %}
-	{%- set IpIpenv = "always" -%}
+    {%- set IpIpenv = "always" -%}
 {% else %}
-	{%- set IpIpenv = "off" -%}
+    {%- set IpIpenv = "off" -%}
 {% endif %}
 {% if enableIPv6 == true %}
-	{%- set IPv6env = "autodetect" -%}
-	{%- set ipv6preInterface = "interface=" -%}
+    {%- set IPv6env = "autodetect" -%}
+    {%- set ipv6preInterface = "interface=" -%}
 {% else %}
-	{%- set IPv6env = "none" -%}
-	{%- set ipv6preInterface = "interface=*" -%}
-	{%- set ipv6preInterface = " " -%}
+    {%- set IPv6env = "none" -%}
+    {%- set ipv6preInterface = "interface=*" -%}
+    {%- set ipv6preInterface = " " -%}
 {% endif %}
 # Calico Version master
 # https://docs.projectcalico.org/master/releases#master
