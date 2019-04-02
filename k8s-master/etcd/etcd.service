@@ -1,5 +1,6 @@
 ### THIS FILE IS MANAGED BY SALTSTACK
 {%- set clusterDomain =  pillar['kubernetes']['domain'] -%}
+{%- set k8sMaster = pillar['kubernetes']['master']['ipaddr'] -%}
 [Unit]
 Description=etcd
 Documentation=https://github.com/coreos
@@ -13,10 +14,10 @@ ExecStart=/usr/bin/etcd  \
 --peer-cert-file=/etc/etcd/kubernetes.pem \
 --peer-key-file=/etc/etcd/kubernetes-key.pem \
 --trusted-ca-file=/etc/etcd/ca.pem \
---listen-client-urls https://0.0.0.0:2379 \
---advertise-client-urls https://0.0.0.0:2379 \
---listen-peer-urls https://0.0.0.0:2380 \
---initial-advertise-peer-urls https://0.0.0.0:2380 \
+--listen-client-urls https://{{ k8sMaster }}:2379 \
+--advertise-client-urls https://{{ k8sMaster }}:2379 \
+--listen-peer-urls https://{{ k8sMaster }}:2380 \
+--initial-advertise-peer-urls https://{{ k8sMaster }}:2380 \
 --peer-client-cert-auth \
 --client-cert-auth
 
