@@ -18,10 +18,10 @@ kubernetes:
       cni-version: v0.7.1
       provider: calico
       calico:
-        version: v3.6.1
-        cni-version: v3.6.1
-        calicoctl-version: v3.6.1
-        controller-version: 3.6-release
+        version: v3.5.4
+        cni-version: v3.5.4
+        calicoctl-version: v3.5.4
+        controller-version: 3.5-release
         as-number: 64512
         token: hu0daeHais3aCHANGEMEhu0daeHais3a
         ipv4:
