@@ -4,7 +4,7 @@ kubernetes:
   master:
     count: 1
     hostname: SaltMaster
-    ipaddr: 10.240.0.10
+    ipaddr: 10.0.0.4
     encryption-key: 'w3RNESCMG+o3GCHTUcrQUUdq6CFV72q/Zik9LAO8uEc='
     etcd:
       version: v3.3.12
