@@ -1,38 +1,27 @@
 kubernetes:
-  version: v1.11.2
+  version: v1.14.0
   domain: cluster.local
   master:
-#    count: 1
-#    hostname: master.domain.tld
-#    ipaddr: 10.240.0.10
-    count: 3
-    cluster:
-      node01:
-        hostname: master01.domain.tld
-        ipaddr: 10.240.0.10
-      node02:
-        hostname: master02.domain.tld
-        ipaddr: 10.240.0.20
-      node03:
-        hostname: master03.domain.tld
-        ipaddr: 10.240.0.30
+    count: 1
+    hostname: SaltMaster
+    ipaddr: 10.240.0.10
     encryption-key: 'w3RNESCMG+o3GCHTUcrQUUdq6CFV72q/Zik9LAO8uEc='
     etcd:
-      version: v3.3.9
+      version: v3.3.12
   worker:
     runtime:
       provider: docker
       docker:
-        version: 18.03.0-ce
+        version: 18.09.4
         data-dir: /dockerFS
     networking:
       cni-version: v0.7.1
       provider: calico
       calico:
-        version: v3.2.1
-        cni-version: v3.2.1
-        calicoctl-version: v3.2.1
-        controller-version: 3.2-release
+        version: v3.6.1
+        cni-version: v3.6.1
+        calicoctl-version: v3.6.1
+        controller-version: 3.6-release
         as-number: 64512
         token: hu0daeHais3aCHANGEMEhu0daeHais3a
         ipv4:
